@@ -5,7 +5,7 @@ public class Guest extends Person {
   int paidAmount;
   // static final Beverage;
 
-  Guest(String[] name, int age, AgeGroup ageGroup) {
+  Guest(String name, int age, AgeGroup ageGroup) {
     super(name, age, ageGroup);
     beverage.setName("none");
   }

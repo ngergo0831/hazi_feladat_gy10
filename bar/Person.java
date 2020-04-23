@@ -3,18 +3,18 @@ package bar;
 import java.util.Arrays;
 
 public class Person {
-  String[] name;
+  String name;
   final int age;
   AgeGroup ageGroup;
 
   void giveBeverage(Guest guest, Beverage beverage) {
   }
 
-  public String[] getName() {
+  public String getName() {
     return name;
   }
 
-  public void setName(String[] name) {
+  public void setName(String name) {
     this.name = name;
   }
 
@@ -30,8 +30,8 @@ public class Person {
     this.ageGroup = ageGroup;
   }
 
-  Person(String[] name, int age, AgeGroup ageGroup) {
-    if (name == null || Arrays.stream(name).anyMatch(s -> s.trim().isEmpty()))
+  public Person(String name, int age, AgeGroup ageGroup) {
+    if (name == null || name.trim().isEmpty())
       throw new IllegalArgumentException();
     if (age < 0)
       throw new IllegalArgumentException();
@@ -41,7 +41,7 @@ public class Person {
 
   @Override
   public String toString() {
-    return String.join(" ", this.name) + String.format(" (%d, %s)", age, ageGroup);
+    return String.format("%s (%d, %s)", name, age, ageGroup);
   }
 
   @Override
@@ -50,6 +50,6 @@ public class Person {
       return false;
     Person person = (Person) obj;
     return this.age == person.getAge() && this.ageGroup.equals(person.getAgeGroup())
-        && Arrays.equals(this.name, person.getName());
+        && this.name.equals(person.getName());
   }
 }
