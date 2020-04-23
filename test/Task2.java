@@ -12,7 +12,7 @@ import bar.Person;
 import bar.Beverage;
 import bar.Guest;
 import bar.Bartender;
-import bar.util.AgeGroupException;
+import bar.AgeGroupException;
 
 public class Task2 {
     static final String[] MSG_CTOR1 = {

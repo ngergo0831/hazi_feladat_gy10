@@ -5,7 +5,7 @@ public class Beverage {
   int price;
   int legalAge;
 
-  Beverage(String name, int price, int legalAge) {
+  public Beverage(String name, int price, int legalAge) {
     if (name == null || name.trim().isEmpty())
       throw new IllegalArgumentException();
     if (price < 0)
@@ -44,7 +44,7 @@ public class Beverage {
   // 2012 Villanyi Cuvee (35900, 18)
   @Override
   public String toString() {
-    return this.name + String.format(" (%d, %d)", this.price,this.legalAge);
+    return this.name + String.format(" (%d, %d)", this.price, this.legalAge);
   }
 
 }

@@ -1,13 +1,11 @@
 package bar;
 
-import java.util.Arrays;
-
 public class Person {
   String name;
   final int age;
   AgeGroup ageGroup;
 
-  void giveBeverage(Guest guest, Beverage beverage) {
+  public void giveBeverage(Guest guest, Beverage beverage) {
   }
 
   public String getName() {
@@ -37,6 +35,7 @@ public class Person {
       throw new IllegalArgumentException();
     this.age = age;
     this.name = name;
+    this.ageGroup = ageGroup;
   }
 
   @Override
