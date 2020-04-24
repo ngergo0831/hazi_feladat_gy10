@@ -1,13 +1,9 @@
 package bar;
 
 public class Guest extends Person {
-  Beverage beverage;
+  Beverage beverage = new Beverage("none", 0, 0);
   int paidAmount;
   // static final Beverage;
-
- /* public Guest(){
-    beverage.setName("none");
-  }*/
 
   public Guest(String name, int age, AgeGroup ageGroup) {
     super(name, age, ageGroup);
