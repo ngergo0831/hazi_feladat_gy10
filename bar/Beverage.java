@@ -2,7 +2,7 @@ package bar;
 
 public class Beverage {
   String name;
-  Integer price;
+  int price;
   int legalAge;
 
   public Beverage(String name, int price, int legalAge) {
@@ -25,7 +25,7 @@ public class Beverage {
     this.name = name;
   }
 
-  public Integer getPrice() {
+  public int getPrice() {
     return price;
   }
 
@@ -47,4 +47,11 @@ public class Beverage {
     return this.name + String.format(" (%d, %d)", this.price, this.legalAge);
   }
 
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof Beverage) || obj == null)
+      return false;
+    Beverage beverage = (Beverage) obj;
+    return beverage.getName().equals(this.getName());
+  }
 }

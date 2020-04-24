@@ -1,9 +1,17 @@
 package bar;
 
 public class Guest extends Person {
-  Beverage beverage = new Beverage("none", 0, 0);
+  static final Beverage invalidBeverage = new Beverage("none", 0, 0);
+  Beverage beverage = invalidBeverage;
   int paidAmount;
-  // static final Beverage;
+
+  @Override
+  public void giveBeverage(Guest guest, Beverage beverage) {
+    if (guest.getBeverage() != invalidBeverage) {
+      guest.setBeverage(beverage);
+      this.setBeverage(invalidBeverage);
+    }
+  }
 
   public Guest(String name, int age, AgeGroup ageGroup) {
     super(name, age, ageGroup);
