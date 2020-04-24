@@ -2,7 +2,7 @@ package bar;
 
 public class Beverage {
   String name;
-  int price;
+  Integer price;
   int legalAge;
 
   public Beverage(String name, int price, int legalAge) {
@@ -25,7 +25,7 @@ public class Beverage {
     this.name = name;
   }
 
-  public int getPrice() {
+  public Integer getPrice() {
     return price;
   }
 
